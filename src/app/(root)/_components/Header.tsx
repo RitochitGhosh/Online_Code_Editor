@@ -1,4 +1,3 @@
-import { SignInButton } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
 import { Code2, Terminal } from "lucide-react";
 import Link from "next/link";
