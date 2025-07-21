@@ -36,42 +36,27 @@ console.log('Even numbers:', evenNumbers);
 const sum = numbers.reduce((acc, curr) => acc + curr, 0);
 console.log('Sum of numbers:', sum);`,
   },
-  typescript: {
-    id: "typescript",
-    label: "TypeScript",
-    logoPath: "/typescript.png",
-    pistonRuntime: { language: "typescript", version: "5.0.3" },
-    monacoLanguage: "typescript",
-    defaultCode: `// TypeScript Playground
-interface NumberArray {
-  numbers: number[];
-  sum(): number;
-  squares(): number[];
-  evenNumbers(): number[];
+  c: {
+    id: "c",
+    label: "C",
+    logoPath: "/c.png",
+    pistonRuntime: { language: "c", version: "10.2.0" },
+    monacoLanguage: "c",
+    defaultCode: `#include <stdio.h>
+
+int main() {
+    // Define an array of 5 integers
+    int numbers[5] = {10, 20, 30, 40, 50};
+
+    // Print the array elements
+    printf("Array elements: ");
+    for (int i = 0; i < 5; i++) {
+        printf(" %d", numbers[i]);
+    }
+
+    return 0;
 }
-
-class MathOperations implements NumberArray {
-  constructor(public numbers: number[]) {}
-
-  sum(): number {
-    return this.numbers.reduce((acc, curr) => acc + curr, 0);
-  }
-
-  squares(): number[] {
-    return this.numbers.map(n => n * n);
-  }
-
-  evenNumbers(): number[] {
-    return this.numbers.filter(n => n % 2 === 0);
-  }
-}
-
-const math = new MathOperations([1, 2, 3, 4, 5]);
-
-console.log('Original numbers:', math.numbers);
-console.log('Squared numbers:', math.squares());
-console.log('Even numbers:', math.evenNumbers());
-console.log('Sum of numbers:', math.sum());`,
+`
   },
   python: {
     id: "python",
@@ -136,30 +121,7 @@ print(f"Sum of numbers: {numbers_sum}")`,
       System.out.println();
   }
 }`,
-  },
-  ocaml: {
-    id: "ocaml",
-    label: "OCaml",
-    logoPath: "/ocaml.png",
-    pistonRuntime: { language: "ocaml", version: "4.12.0" },
-    monacoLanguage: "ocaml",
-    defaultCode: `(* Functions *)
-
-let inc x = x + 1
-let _ = inc 1
-
-(** [concat s] takes string [s] and concats it with a "!" at the end *)
-let concat str = str ^ "!"
-let _ = concat "Name"
-
-(** [c_area r] calculates the area of the circle with radius [r] *)
-let c_area r = 3.14 ** 2. *. float_of_int r
-let _ = c_area 4
-
-(** [pow base exp] calculates the power of [base] raiseed to the power [exp]*)
-let rec pow base exp = if exp = 0 then 1 else base * pow base (exp -1)
-let _ = print_int pow 2 3`
-  },
+  },  
   cpp: {
     id: "cpp",
     label: "C++",
@@ -203,6 +165,66 @@ int main() {
     
     return 0;
 }`,
+  },
+  typescript: {
+    id: "typescript",
+    label: "TypeScript",
+    logoPath: "/typescript.png",
+    pistonRuntime: { language: "typescript", version: "5.0.3" },
+    monacoLanguage: "typescript",
+    defaultCode: `// TypeScript Playground
+interface NumberArray {
+  numbers: number[];
+  sum(): number;
+  squares(): number[];
+  evenNumbers(): number[];
+}
+
+class MathOperations implements NumberArray {
+  constructor(public numbers: number[]) {}
+
+  sum(): number {
+    return this.numbers.reduce((acc, curr) => acc + curr, 0);
+  }
+
+  squares(): number[] {
+    return this.numbers.map(n => n * n);
+  }
+
+  evenNumbers(): number[] {
+    return this.numbers.filter(n => n % 2 === 0);
+  }
+}
+
+const math = new MathOperations([1, 2, 3, 4, 5]);
+
+console.log('Original numbers:', math.numbers);
+console.log('Squared numbers:', math.squares());
+console.log('Even numbers:', math.evenNumbers());
+console.log('Sum of numbers:', math.sum());`,
+  },
+  ocaml: {
+    id: "ocaml",
+    label: "OCaml",
+    logoPath: "/ocaml.png",
+    pistonRuntime: { language: "ocaml", version: "4.12.0" },
+    monacoLanguage: "ocaml",
+    defaultCode: `(* Functions *)
+
+let inc x = x + 1
+let _ = inc 1
+
+(** [concat s] takes string [s] and concats it with a "!" at the end *)
+let concat str = str ^ "!"
+let _ = concat "Name"
+
+(** [c_area r] calculates the area of the circle with radius [r] *)
+let c_area r = 3.14 ** 2. *. float_of_int r
+let _ = c_area 4
+
+(** [pow base exp] calculates the power of [base] raiseed to the power [exp]*)
+let rec pow base exp = if exp = 0 then 1 else base * pow base (exp -1)
+let _ = print_int pow 2 3`
   },
   go: {
     id: "go",
