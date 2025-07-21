@@ -4,12 +4,11 @@ import LoginButton from "@/components/LoginButton";
 import { Skeleton } from "@/components/ui/skeleton";
 import { SignedOut, UserButton } from "@clerk/nextjs";
 import { User } from "lucide-react";
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 function HeaderProfileBtn() {
   const [loading, setLoading] = useState(true);
-  const router = useRouter();
+
 
   useEffect(() => {
     const timer = setTimeout(() => {

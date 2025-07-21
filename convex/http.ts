@@ -32,6 +32,10 @@ http.route({
           lemonSqueezyOrderId: data.id,
           amount: data.attributes.total,
         });
+
+        if (success) {
+            // TODO: Send email to user...
+        }
       }
 
       return new Response("Webhook processed successfully", { status: 200 });
